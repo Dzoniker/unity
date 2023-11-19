@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovemnt2D : MonoBehaviour
+{
+    public float moveSpeed = 10f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame   void Update()
+        void Update()
+    {
+        // Player Movement
+        float horizontalMovement = Input.GetAxis("Horizontal");
+        float verticalMovement = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(horizontalMovement, verticalMovement, 0f) * moveSpeed * Time.deltaTime;
+        transform.Translate(movement);
+    }
+}
